@@ -1,2 +1,2 @@
-# djago
+# Django
 Exercicios de django
