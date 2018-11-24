@@ -1,0 +1,29 @@
+{% extends "pools/base.html" %}
+
+{% block title_page %}
+    Nova questão
+{% endblock title_page %}
+
+{% block body %}
+	<div class="col-lg-12">
+		{% if valor %}
+			<div class="alert-success">
+			A questão "{{ valor }}" foi cadastrada com suscesso!
+			</div>
+		{% endif %}
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Criar nova questão
+		</div>
+		<form action="{% url 'cadastrar' %}" method="POST" class="post-form">
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<input type="submit" value="Criar">
+		</form>
+		
+	</div>
+	</div>
+
+{% endblock body %}
